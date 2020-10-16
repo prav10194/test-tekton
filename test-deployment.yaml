@@ -7,8 +7,8 @@ metadata:
     app: myapp
 spec: 
   containers: 
-  - name: webgoat
-    image: webgoat/webgoat-8.0
+  - name: tuxotron
+    image: tuxotron/xvwa
 ---
 apiVersion: v1
 kind: Service
