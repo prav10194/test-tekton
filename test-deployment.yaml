@@ -6,8 +6,8 @@ metadata:
     app: myapp
 spec: 
   containers: 
-  - name: web-dvwa #tuxotron
-    image: vulnerables/web-dvwa #tuxotron/xvwa
+  - name: tuxotron #web-dvwa
+    image: tuxotron/xvwa #vulnerables/web-dvwa
 ---
 apiVersion: v1
 kind: Service
