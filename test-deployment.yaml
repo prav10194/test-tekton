@@ -7,8 +7,8 @@ metadata:
     app: myapp
 spec: 
   containers: 
-  - name: nginx-controller
-    image: nginx
+  - name: web-dvwa
+    image: vulnerables/web-dvwa
 ---
 apiVersion: v1
 kind: Service
