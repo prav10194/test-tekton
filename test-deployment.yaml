@@ -6,14 +6,13 @@ metadata:
     app: myapp
 spec: 
   containers: 
-  - name: tuxotron
-    image: tuxotron/xvwa
+  - name: web-dvwa #tuxotron
+    image: vulnerables/web-dvwa #tuxotron/xvwa
 ---
 apiVersion: v1
 kind: Service
 metadata: 
   name: myapp-service
-
 spec: 
   type: ClusterIP
   ports:
