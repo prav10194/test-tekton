@@ -17,7 +17,7 @@ spec:
   type: ClusterIP
   ports:
   - name: http
-    targetPort: 900
+    targetPort: 9000
     port: 9004
   selector: 
     app: sonarqube-app
