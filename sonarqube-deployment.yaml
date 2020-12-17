@@ -8,9 +8,6 @@ spec:
   containers: 
   - name: sonarqube
     image: sonarqube:latest
-    env:
-      - name: SONAR_ES_BOOTSTRAP_CHECKS_DISABLE
-        value: true
 ---
 apiVersion: v1
 kind: Service
