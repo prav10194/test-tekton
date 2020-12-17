@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: sonarqube-pod
+  labels: 
+    app: sonarqube-app
+spec:
+  containers: 
+  - name: sonarqube
+    image: sonarqube:latest
+    env:
+      - name: SONAR_ES_BOOTSTRAP_CHECKS_DISABLE
+        value: true
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: sonarqube-service
+  annotations:
+    cloud.google.com/neg: '{"ingress": true}'
+spec: 
+  type: ClusterIP
+  ports:
+  - name: http
+    targetPort: 9000
+    port: 80
+  selector: 
+    app: sonarqube-app
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: sonarqube-ingress
+spec:
+  backend:
+    serviceName: sonarqube-service
+    servicePort: 80
